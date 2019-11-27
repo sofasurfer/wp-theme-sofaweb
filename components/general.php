@@ -78,7 +78,7 @@ class General {
     }
 
     public function my_acf_google_map_api() {
-        $api['key'] = 'AIzaSyCiRdwZdvC8are3PWqcCcDqpwsk2buF1cw';
+        $api['key'] = '';
         return $api;
     }
 
