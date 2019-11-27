@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Form Placeholder
+   ========================================================================== */
+
+@mixin placeholder {
+    &::-webkit-input-placeholder    {@content}
+    &:-moz-placeholder      {@content}
+    &::-moz-placeholder     {@content}
+    &:-ms-input-placeholder     {@content}  
+}
+
+/* ==========================================================================
+   Fonts smoothing
+   ========================================================================== */
+
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}

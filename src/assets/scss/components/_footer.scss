@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.c-footer {
+	padding-top: 4em;
+	padding-bottom: 0.5em;
+	background-color: $bg-dark;
+	color: $text-color-light;
+}
+
+.c-footer p {
+	padding-bottom: 1.5em;
+}
+
+.c-footer-disclaimer {
+	border-top: solid 1px $border-dark;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-top: 4em;
+}
+
+.c-footer-disclaimer-list,
+.c-footer-address-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.c-footer-disclaimer-list li,
+.c-footer-address-list li {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.c-footer-disclaimer-list > li + li {
+	border-left: solid 1px $border-dark;
+	padding-left: 10px;
+	margin-left: 8px; 
+}
+
+.c-footer-address-list li:first-child {
+	padding-right: 40px;
+	min-width:  35%;
+}
+
+.c-footer-main .c-col-4 {
+	border-left: solid 1px $border-dark;
+}
+
+
+.c-footer .c-text-light a,
+.c-footer a,
+.c-footer a:visited {
+	color: $text-color-light;
+	background-image: none;
+}
+
+.c-footer a:hover,
+.c-footer a:focus {
+	color: $text-color-light;
+}
+
+.c-footer-disclaimer a:hover,
+.c-footer-disclaimer a:focus,
+.c-footer-address a:hover,
+.c-footer-address a:focus {
+	color: $text-color-medium;
+}
+
+.c-footer .c-showroom-text {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.c-footer-logo {
+	max-width: 200px;
+}

@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Base Project
+   ========================================================================== */
+
+body {
+	@include font-smoothing(on);
+	background-color: $bg-content;
+	color: $text-color;
+	font-family: $font-stack-default;
+	font-size: 18px;
+	font-weight: 400;
+    font-display: auto;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* links */
+a {
+	text-decoration: none;
+}
+
+
+a,
+a:visited,
+a:focus,
+a:hover {
+	color: $text-color;
+}
+
+
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+
+input,
+select,
+textarea {
+	color: $text-color;
+}
+
+textarea {
+	resize: none;
+}
+
+
+/* ==========================================================================
+   Standard img / media declaration
+   ========================================================================== */
+
+embed,
+object,
+video,
+iframe,
+img {
+    width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+.c-img-max-width,
+.c-content .c-img-max-width {
+	width: auto;
+	max-width: 100%;
+}
+
+img { 
+	vertical-align: bottom; 
+}

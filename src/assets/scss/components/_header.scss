@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.c-header {
+	background-color: $bg-content;
+	z-index: 1;
+}
+
+.c-header-main {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+	-webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+	justify-content: space-between;
+	padding-top: 1.5em;
+	margin-bottom: 2.2em;	
+}
+
+
+.c-header-logo {
+	position: relative;
+	width: 200px;
+}
+
+.c-header-logo a {
+	display: block;
+}
+
+/* ==========================================================================
+  meta 
+   ========================================================================== */
+
+
+.c-header-meta {
+	padding: 0.6em 0;
+	text-transform: uppercase;
+}
+
+.c-meta-list,
+.c-lang-list {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.c-meta-list {
+	padding-left: 50px;
+}
+
+.c-meta-list li,
+.c-lang-list li,
+.c-offcanvas-meta-list li,
+.c-offcanvas-lang-list li {
+	display: inline-block;
+}
+
+.c-meta-list li + li,
+.c-lang-list li + li,
+.c-offcanvas-meta-list li + li,
+.c-offcanvas-lang-list li + li {
+	padding-left: 12px;
+	margin-left: 10px;
+	border-left: solid 1px $border-basic;
+}
+
+.c-lang-list a,
+.c-lang-list a:visited,
+.c-offcanvas-lang-list a,
+.c-offcanvas-lang-list a:visited{
+	color: $text-color-medium;
+	transition: color .1s;
+}
+
+.c-lang-list a:focus,
+.c-lang-list a:hover,
+.c-lang-list .c-active a,
+.c-offcanvas-lang-list a:focus,
+.c-offcanvas-lang-list a:hover,
+.c-offcanvas-lang-list .c-active a{
+	color: $text-color-dark;
+	
+}
+
+.c-meta-list a,
+.c-meta-list a:visited,
+.c-offcanvas-meta-list a,
+.c-offcanvas-meta-list a:visited{
+	color: $text-color-dark;
+}
+
+.c-meta-list a:focus,
+.c-meta-list a:hover,
+.c-offcanvas-meta-list a:focus,
+.c-offcanvas-meta-list a:hover{
+	color: #000;
+}
+
+/* ==========================================================================
+   nav
+   ========================================================================== */
+
+.c-nav-main {
+	text-transform: uppercase;
+	padding-top: 9px;
+}
+
+.c-nav-main-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.c-nav-main-list li {
+	display: inline-block;
+}
+
+.c-nav-main-list li + li {
+	padding-left: 20px;
+}
+
+.c-nav-main a,
+.c-offcanvas-nav-list a {
+    display: inline-block;
+	position: relative;
+	padding: 0.25em 0;
+}
+
+.c-nav-main a,
+.c-nav-main a:visited,
+.c-nav-main a:focus,
+.c-nav-main a:hover,
+.c-offcanvas-nav-list a,
+.c-offcanvas-nav-list a:visited,
+.c-offcanvas-nav-list a:focus,
+.c-offcanvas-nav-list a:hover{
+	color: $text-color-dark;
+}
+
+.c-nav-main a::after {
+    content: '';
+    display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: $bg-primary;
+    transition: width .2s;
+}
+
+.c-nav-main .c-active a::after,
+.c-nav-main a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+  header sticky
+   ========================================================================== */
+
+.c-header-sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.c-header-sticky .c-header-meta {
+	display: none;
+}
+
+.c-header-sticky .c-header-logo {
+	width: 150px;
+}
+
+.c-header-sticky .c-header-main {
+	height: 50px;
+	padding-top: 12px;
+	margin: 0;
+}
+
+.c-header-sticky .c-nav-main {
+	padding-top: 4px;
+	font-size: 14px;
+}
+
+
+
+

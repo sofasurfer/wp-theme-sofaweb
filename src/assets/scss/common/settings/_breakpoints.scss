@@ -1,0 +1,32 @@
+
+/* ==========================================================================
+   Settings for Saas Tool 'Media Queries with superpowers'
+   https://github.com/sass-mq/sass-mq
+   ========================================================================== */
+
+$mq-base-font-size: $defaultPxSize;
+
+// To enable support for browsers that do not support @media queries,
+// (IE <= 8, Firefox <= 3, Opera <= 9) set $mq-responsive to false
+// Create a separate stylesheet served exclusively to these browsers,
+// meaning @media queries will be rasterized, relying on the cascade itself
+$mq-responsive: true;
+
+// Name your breakpoints in a way that creates a ubiquitous language
+// across team members. It will improve communication between
+// stakeholders, designers, developers, and testers.
+$mq-breakpoints: (
+	mobile: 320px,
+	palm: 500px,
+ 	tablet: 740px,
+	bigtablet: 860px,
+ 	desktop: 1024px,
+ 	huge: 1200px,
+	bigger: 1300px,
+	gigantic: 2000px
+);
+
+// If you want to display the currently active breakpoint in the top
+// right corner of your site during development, add the breakpoints
+// to this list, ordered by width, e.g. (mobile, tablet, desktop).
+$mq-show-breakpoints: (mobile, palm, tablet, bigtablet, desktop, huge, bigger, gigantic);

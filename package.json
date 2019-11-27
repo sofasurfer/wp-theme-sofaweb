@@ -1,0 +1,49 @@
+{
+  "name": "cubestrap",
+  "version": "0.0.1",
+  "description": "A NPM/Gulp/Sass Workflow for frontend development @ cubegrafik GmbH",
+  "homepage": "https://github.com/cubegrafik/cubestrap",
+  "keywords": [
+    "gulp",
+    "npm",
+    "sass",
+    "browsersync"
+  ],
+  "author": "Samuel Hauser <samuel@cubegrafik.com>",
+  "license": "CC BY 4.0",
+  "main": "gulpfile.js",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^9.4.2",
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "graceful-fs": "^4.1.15",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^3.2.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-multistream": "^0.1.3",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "jshint": "^2.9.6",
+    "merge-stream": "^1.0.1",
+    "minimatch": "^3.0.4",
+    "require-dir": "^1.2.0",
+    "run-sequence": "^2.2.1"
+  },
+  "dependencies": {
+    "fontfaceobserver": "^2.1.0",
+    "html5shiv": "^3.7.3",
+    "lazysizes": "^4.1.4",
+    "normalize.css": "^8.0.1",
+    "sass-mq": "^5.0.0",
+    "scut": "^1.4.0",
+    "siema": "^1.5.1"
+  }
+}

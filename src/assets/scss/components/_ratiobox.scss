@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Ratio Box
+   ========================================================================== */
+
+.c-ratiobox {
+	position: relative;
+	height: 0;
+	display: block;
+	overflow: hidden;
+}
+
+.c-ratiobox > img,
+.c-ratiobox > iframe,
+.c-ratiobox > object {
+	position: absolute !important;
+	top: 0;
+	left: 0;
+}
+
+.c-ratiobox > img {
+	width: 100%;
+	height: auto;	
+}
+
+.c-ratiobox > iframe,
+.c-ratiobox > object {
+	width: 100% !important;
+	height: 100% !important;
+	background-color: #000;
+}
+
+.c-ratiobox-16by9 {
+	padding-bottom: 56.25%;
+}
+
+.c-ratiobox-4by3 {
+	padding-bottom: 75%;
+}
+
+.c-ratiobox-1by1 {
+	padding-bottom: 100%;
+}

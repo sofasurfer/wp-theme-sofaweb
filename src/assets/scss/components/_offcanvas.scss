@@ -1,0 +1,214 @@
+/* ==========================================================================
+   Offcanvas trigger
+   ========================================================================== */
+
+.c-offcanvas-trigger {
+	position: fixed;
+	top: 5px;
+	right: 30px;
+	display: none;
+	width: 40px;
+	height: 40px;
+	color: transparent;
+	border-radius: 50%;
+	/*background-color: $bg-primary;*/
+	transform: perspective(1px) translateZ(0);
+	transition: all 0.2s ease-in-out;
+	overflow: hidden;
+	z-index: 20;
+	
+
+
+	span {
+		display: block;
+		width: 20px;
+		height: 1px;
+		margin: 5px 0px 5px 20px;
+		border-radius: 1px;
+		background-color: $border-dark;		
+		opacity: 1;	
+		transition: all 0.2s ease-in-out;
+	}
+	
+	span:nth-child(1){
+		margin-top: 14px;
+	}
+	
+	span:nth-child(2){
+		width: 14px;
+		margin-left: 25px;
+	}
+	
+	
+}
+
+.c-offcanvas-trigger:focus,
+.c-offcanvas-trigger:hover {
+	/*background-color: $bg-primary;*/
+}
+
+/* ==========================================================================
+   Offcanvas nav
+   ========================================================================== */
+
+.c-offcanvas-nav {
+	opacity: 1;
+	position: fixed;
+	top: -500px;
+	left: 0;
+	height: 0px;
+	max-height: 0px;
+	padding-top: 30px;
+	padding-bottom: 0;
+	background-color: $bg-content;
+	border-bottom: solid 1px $bg-light;
+	z-index: 10;
+	text-transform: uppercase;
+	text-align: center;
+	transition: all 0.5s ease-in;
+}
+
+.c-offcanvas-lang-list,
+.c-offcanvas-meta-list,
+.c-offcanvas-nav-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	transition: all 0.6s ease-in;	
+}
+
+.c-offcanvas-lang {
+	padding-bottom: 2em;
+}
+
+.c-offcanvas-lang-list {
+	padding-bottom: 1.5em;
+}
+
+.c-offcanvas-nav-list {
+	font-size: 20px;
+	padding-top: 1.5em;
+}
+
+
+.c-offcanvas-nav-list li {
+	padding: 1em 0 1em 0;
+}
+
+.c-offcanvas-nav-list a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: $bg-primary;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: .15s linear;
+}
+
+.c-offcanvas-nav-list a:hover::after,
+.c-offcanvas-nav-list a:focus::after,
+.c-offcanvas-nav-list .c-active a::after {
+	visibility: visible;
+	transform: scaleX(1);
+}
+
+/* ==========================================================================
+   Offcanvas visible
+   ========================================================================== */
+
+#c-offcanvas[type=checkbox]{
+	
+	display: none;
+
+	/*&:checked ~ div.c-offcanvas-dialog {
+		right: 0px;
+	}
+	&:checked ~ .c-header {
+		position: fixed;
+		z-index: 10;
+	}	*/
+
+
+	&:checked ~ .c-header .c-offcanvas-trigger span:nth-child(1),
+	&:checked ~ .c-header .c-offcanvas-trigger span:nth-child(3) {
+		position: absolute;
+		top: 6px;
+		right: 0;
+		transform:rotate(45deg);
+	}
+	
+	&:checked ~ .c-header .c-offcanvas-trigger span:nth-child(2) {
+		display: none;
+	}
+	
+	&:checked ~ .c-header .c-offcanvas-trigger span:nth-child(3) {
+		transform:rotate(-45deg);
+		margin-top: 14px;
+	}
+	
+	&:checked ~ .c-header .c-offcanvas-nav {
+		opacity: 1;
+		top: 50px;
+		bottom: 0px;
+		height: 100%;
+		max-height: 9000px;
+	}
+
+	&:checked ~ .c-header .c-offcanvas-nav .c-offcanvas-nav-list{
+		padding-top: 30%;
+	}
+	
+	
+}
+
+
+/* ==========================================================================
+   Offcanvas responsive
+   ========================================================================== */
+
+@media only screen and (max-width:1023px) {  
+
+	main.c-content{
+		margin-top: 60px;
+	}
+
+	.c-header{
+		position: fixed;
+		z-index: 99;
+	}
+
+	.c-header-meta,
+	.c-nav-main {
+		display: none;
+	}
+	
+	.c-header-main,
+	.c-header-sticky .c-header-main {
+		height: 50px;
+		padding-top: 12px;
+		margin: 0;
+		background-color: white;
+		z-index: 20;
+	}
+	
+	.c-header-logo,
+	.c-header-sticky .c-header-logo {
+		width: 150px;
+		z-index: 20;
+	}
+	
+	.c-footer-logo {
+		max-width: 150px;
+	}
+	
+	.c-offcanvas-trigger {
+		display: block;
+	}
+	
+	.c-showroom {
+		padding-top: 0.25em;
+	}
+}

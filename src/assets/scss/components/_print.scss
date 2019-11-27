@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Print CSS
+   ========================================================================== */
+@media print {
+    /* base styles */
+    * {
+        background: transparent !important;
+        color: #000 !important; 
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+	
+	a,
+    a:visited {
+        text-decoration: underline;
+    }
+    
+    .c-ir a:after,
+    a[href^="javascript:"]:after,
+    a[href]:after {
+		content: none !important;
+	  }
+    
+    pre,
+    blockquote {
+        border: none;
+        page-break-inside: avoid;
+    }
+    
+    thead {
+        display: table-header-group; 
+    }
+    
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    
+    img {
+        max-width: 100% !important;
+    }
+        
+    @page {
+        margin: 0.5cm;
+    }
+    
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    
+    h2,
+    h3 {
+        break-after:avoid;
+        page-break-after: avoid;
+    }
+    
+    /* font-sizes */
+	
+	html,
+	body {
+		width: 100%;
+		height: auto;
+		/*overflow: auto;*/
+	}
+    
+    body {
+        font-size:12px;    
+    }
+	
+	h1, .c-h1 {
+		font-size: 24px;
+	}
+	
+	.c-lead,
+	.c-text-block .c-lead,
+	.c-lead-big,
+	.c-subtitle-big,
+	h2, .c-h2,
+	h3, .c-h3,
+	.c-text-block blockquote p {
+		font-size: 16px;
+	}
+	
+	/* project styles */
+	.c-container {
+		padding-bottom: 2em;
+	}
+	
+
+	.c-footer {
+		display: none;
+	}
+	
+	
+}
+
+
+

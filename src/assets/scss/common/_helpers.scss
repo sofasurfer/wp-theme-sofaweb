@@ -1,0 +1,57 @@
+/* ==========================================================================
+  Hiding
+   ========================================================================== */
+
+.c-hide-visually {
+	position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.c-hide-completely {
+	display: none;
+	visibility: hidden;
+}
+
+/* image replacement */
+.c-ir {
+	display: block;
+	border: 0;
+	text-indent: -999em;
+	overflow: hidden;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	text-align: left;
+	direction: ltr;
+}
+
+
+/* ==========================================================================
+   Sticky Footer
+   ========================================================================== */
+
+html {
+    display: flex;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.c-header,
+.c-footer {
+    flex-shrink: 0;
+}
+
+.c-content {
+    flex-grow: 1;
+}

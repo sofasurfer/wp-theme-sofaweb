@@ -1,0 +1,31 @@
+
+/* ==========================================================================
+   Default settings defined as variables
+   ========================================================================== */
+
+$fontstack: 'Open Sans', Helvetica, Arial, sans-serif;
+
+
+/* -------------------------------------------------------------------------
+ Font Sizes
+ --------------------------------------------------------------------------- */
+
+$defaultPxSizeValue: 16;
+$defaultPxSize: 16px;
+
+$defaultFontSize: scut-em($defaultPxSizeValue);
+
+$mobileFontSize: scut-em(20);
+$tabletFontSize: scut-em(22);
+$desktopFontSize: scut-em(24);
+
+
+/* -------------------------------------------------------------------------
+ Line Heights
+ --------------------------------------------------------------------------- */
+
+$defaultLineHeight: 1.4;
+
+$mobileLineHeight: 1.2;
+$tabletLineHeight: 1.5;
+$desktopLineHeight: 1.4;

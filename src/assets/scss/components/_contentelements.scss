@@ -1,0 +1,234 @@
+/* ==========================================================================
+   Contentelements
+   ========================================================================== */
+
+/* small elements that don't need their own .scss */
+
+
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+
+.c-bg-dark {
+	background-color: $bg-dark;
+}
+
+.c-bg-light {
+	background-color: $bg-light;
+}
+
+/* ==========================================================================
+  Showroom
+   ========================================================================== */
+
+.c-img-circle {
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.c-showroom-text {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+
+
+/* ==========================================================================
+ title
+   ========================================================================== */
+
+.c-section-title-big {
+	overflow: hidden;
+	margin-top: -0.65em;
+}
+
+/* ==========================================================================
+  img combinations
+   ========================================================================== */
+
+.c-img-2col-alignment {
+	margin-top: -4em;
+}
+
+.c-img-2col-border {
+	border-top: solid 30px $bg-content;
+	border-left: solid 30px $bg-content;
+}
+
+.c-img-3col-border {
+	border: solid 30px $bg-content;
+}
+
+.c-img-3col-alignment1 {
+	padding-top: 3em;
+}
+
+.c-img-3col-alignment2 {
+	margin-top: -5.5em;
+}
+
+/* ==========================================================================
+ teaser 
+   ========================================================================== */
+
+.c-teaser-item {
+	flex-grow: 1;
+	height: 100%;
+	background-color: $bg-content;
+}
+
+.c-teaser-logo {
+	width: 190px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+.c-teaser-text {
+	text-align: center;
+	padding: 2em 30px;
+}
+
+.c-open-circle {
+	overflow: hidden;
+	border-radius: 50%;
+	background-color: $bg-secondary;
+}
+
+.c-open-circle-inner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-flow: row wrap;	
+}
+
+.c-open-circle-text {
+	padding: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+.c-open-circle-inner p {
+	-webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;    	
+}
+
+.c-box {
+	padding: 30px;
+}
+
+
+/* ==========================================================================
+  Facts
+   ========================================================================== */
+
+.c-facts-item {
+	padding: 0 15px 1.5em 15px;
+    // width: 25%;
+    // float: left;
+}
+
+.c-facts-img {
+	max-width: 60%;
+	margin: 0 auto 1.5em auto;	
+}
+
+/* ==========================================================================
+ map
+   ========================================================================== */
+
+.c-map {
+	box-sizing: content-box;
+	height: 600px;
+}
+
+.c-directions-panel {
+	box-sizing: border-box;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -235px;
+	width: 450px;
+	height: 470px;
+	padding: 30px;
+	background-color: $bg-content;
+	z-index: 1;
+    transition: all 0.5s ease-in-out;
+
+    &.hidden{
+        margin-right: -450px;
+    }
+	
+}
+
+.c-directions-info {
+	padding-bottom: 1em;
+	min-height: 6em;
+}
+
+.c-direction-list {
+	margin: 0;
+	padding: 1em 0 0 0;
+	list-style: none;
+}
+
+.c-direction-list li {
+	display:inline-block;
+	overflow: hidden;
+}
+
+/* ==========================================================================
+  Cookie notice
+   ========================================================================== */
+
+.cookie-notice{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 440px;
+	height: 440px;
+	border-radius: 50%;
+	background-color: $bg-dark;
+  color: white;
+  line-height: 1.5;
+  text-align: center;
+  display: none;
+	z-index: 100;
+	border: solid 1px $bg-content;
+}
+
+.cookie-notice .c-open-circle-text {
+	padding: 40px;
+}
+
+.cookie-notice span {
+	display: block;
+	padding-top: 1.5em;
+}
+
+@media only screen and (max-width:767px) {    
+	.cookie-notice {
+		width: 100%;
+		height: auto;
+		bottom: 0;
+		left: 0;
+		right: auto;
+		border-radius: 0;
+		border: none;
+	}
+	
+	.cookie-notice .c-open-circle-inner {
+		position: relative;
+	}
+	
+	.cookie-notice .c-open-circle-text {
+		padding: 20px;
+	}
+	
+}
