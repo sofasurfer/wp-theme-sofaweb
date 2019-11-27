@@ -1,6 +1,6 @@
-# Cite du temps Prototype
+# SofaWeb WP Theme
 
-Boilerplate for frontend development @ cubegrafik GmbH.
+Wordpress Theme for sofasurfer.org
 
 
 ## Requirements to work on cubestrap
