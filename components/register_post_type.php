@@ -1,7 +1,7 @@
 <?php
 
 // Namespace declaration
-namespace CiteDuTemps;
+namespace SofaWeb;
 
 use DirectoryIterator;
 

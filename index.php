@@ -1,29 +1,19 @@
 <?php
 get_template_part('templates/header');
 
+
+get_template_part('templates/jumbotron');
+
+
+
 // Set post
 if( have_posts() ) the_post();
 
-// get header showroom
-$showroom_elements = get_field('cdt_headers');
-if(!empty($showroom_elements)){
-    include( locate_template( 'templates/showroom.php', false, false ) );
-}else{
-    include( locate_template( 'templates/title.php', false, false ) );
-}
+echo '<div id="container" class="container">';
 
-// get site elements
-$site_elements = get_field('cdt_elements');
-if( !empty($site_elements)){
-    foreach( $site_elements as $site_element ){
-        include( locate_template( 'templates/' . $site_element['acf_fc_layout'] . '.php', false, false ) );
-    }
-}
+the_content();
 
-// echo '<pre>';
-// print_r($site_elements);
-// echo '</pre>';
-
+echo '</div>';
 
 get_template_part('templates/footer');
 

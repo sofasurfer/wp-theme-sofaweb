@@ -1,7 +1,7 @@
 <?php
 
 // Namespace declaration
-namespace CiteDuTemps;
+namespace SofaWeb;
 
 // Exit if accessed directly 
 defined('ABSPATH') or die;
@@ -34,26 +34,29 @@ class General {
     private function __construct() {
         // add_action('wp_enqueue_scripts', [$this, 'custom_scripts']);
         add_action('init', [$this, 'cdt_init']);
-        add_action( 'init', [$this, 'cdt_register_maim_menu'] );
+        add_action('init', [$this, 'cdt_register_maim_menu'] );
         add_action('admin_head', [$this, 'my_custom_admin_css']);
-        add_shortcode( 'openinghours', [$this, 'cdt_shortcode_openinghours'] );
-        add_shortcode( 'admission', [$this, 'cdt_shortcode_admission'] );
-        add_shortcode( 'contactinfo', [$this, 'cdt_shortcode_contactinfo'] );
+
         add_shortcode( 'wp_version', [$this, 'c_shortcode_version'] );
-        add_filter('nav_menu_css_class' , [$this, 'cdt_special_nav_class'] , 10 , 2);
-        add_filter('acf/format_value/type=textarea', [$this, 'cdt_format_value'], 10, 3);
-        add_filter('acf/fields/google_map/api', [$this, 'my_acf_google_map_api'] );
+        add_shortcode( 'get_posts', [$this, 'c_get_posts'] );
+        add_shortcode( 'render_imagetag', [$this, 'c_shortcode_render_image'] );
+        // add_shortcode( 'cdt_post_languages', [$this, 'cdt_post_languages'] );
+        // add_shortcode( 'cdt_post_locale', [$this, 'cdt_post_locale'] );
+
+        // add_filter('nav_menu_css_class' , [$this, 'cdt_special_nav_class'] , 10 , 2);
+        // add_filter('acf/format_value/type=textarea', [$this, 'cdt_format_value'], 10, 3);
+        // add_filter('acf/fields/google_map/api', [$this, 'my_acf_google_map_api'] );
+
+
+        // Disable gutenberg
+
         add_filter('use_block_editor_for_post', '__return_false', 10);
-        add_filter('use_block_editor_for_post_type', '__return_false', 10);
+        add_filter('use_block_editor_for_post_type', '__return_true', 10);
 
-        add_shortcode( 'cdt_post_languages', [$this, 'cdt_post_languages'] );
+        add_filter('use_block_editor_for_page', '__return_false', 10);
 
-        add_shortcode( 'cdt_post_locale', [$this, 'cdt_post_locale'] );
 
-        add_theme_support( 'post-thumbnails' );
-        add_theme_support( 'menus' );
 
-        load_theme_textdomain('cite-du-temps', get_stylesheet_directory() . '/lang');
 
 
         if( function_exists('acf_add_options_page') ) {
@@ -62,7 +65,12 @@ class General {
     }
 
     public function cdt_init(){
-        remove_post_type_support( 'page', 'editor' );
+
+        // remove_post_type_support( 'page', 'editor' );
+        add_theme_support( 'post-thumbnails' );
+        add_theme_support( 'menus' );
+        add_post_type_support( 'page', 'excerpt' );
+
     }
 
     public function cdt_register_maim_menu() {
@@ -82,17 +90,7 @@ class General {
         return $api;
     }
 
-    public function cdt_shortcode_openinghours(){
-        return get_field('cdt_options_openinghours', 'option');
-    }
 
-    public function cdt_shortcode_admission(){
-        return get_field('cdt_options_admission', 'option');
-    }
-
-    public function cdt_shortcode_contactinfo(){
-        return get_field('cdt_options_contactinfo', 'option');
-    }
 
     public function cdt_format_value( $value, $post_id, $field ) {
         // run do_shortcode on all textarea values
@@ -107,6 +105,51 @@ class General {
             return $my_theme->get( 'Version' );
         }
         return 1.0;
+    }
+
+
+    /*
+        Returns posts
+    */
+    public function c_get_posts($atts){
+        global $wp_query;
+        $p_query = array(
+            'post_type'     => $atts['type'],
+            'orderby'       => 'date',
+            'order'         => 'DESC'
+        );
+        if( !empty($atts['size'])){ 
+            $p_query['numberposts'] = -1;
+        }
+        if( !empty($atts['ids'])){
+            $p_query['post__in'] = explode(',', $atts['ids']);
+        }
+        $p_query = array_merge($p_query,$atts);
+
+        error_log(print_r($p_query,true));
+        $rev_posts = get_posts( $p_query );
+
+        ob_start();
+        foreach( $rev_posts as $project ){
+            include(  get_template_directory() . '/templates/'. $atts['tpl'] .'.php' );
+        } 
+
+        return ob_get_clean();
+
+    }
+
+    /*
+        Renders an image tag by it's ID
+    */
+    public function c_shortcode_render_image($args){
+        if( empty($args['size']) ){
+            $src = wp_get_attachment_image_src( $args['id'], 'full' );
+        }else{
+            $src = wp_get_attachment_image_src( $args['id'], $args['size'] );
+        }
+        $srcset = wp_get_attachment_image_srcset( $args['id'], array( 400, 200 ) );
+        $sizes = wp_get_attachment_image_sizes( $args['id'], array( 400, 200 ) );
+        return '<img class="lazy '.$args['class'].'" srcset="'.$srcset.'" data-src="'.$src[0].'" alt="" />';
     }
 
     public function cdt_post_locale(){
