@@ -1,19 +1,23 @@
 <?php
+
+error_log( get_post_type() );
+
 get_template_part('templates/header');
 
-
-get_template_part('templates/jumbotron');
-
-
-
-// Set post
-if( have_posts() ) the_post();
-
-echo '<div id="container" class="container">';
-
-the_content();
-
-echo '</div>';
+if ( (!is_front_page() && is_home()) || is_category() ) {
+    get_template_part('templates/archive_header');
+    while ( have_posts() ) {
+        the_post();
+        get_template_part('templates/archive');
+    }
+    echo '</div></div>';
+}else{
+    get_template_part('templates/jumbotron');
+    echo '<div id="container" class="container">';
+    if( have_posts() ) the_post();
+    the_content();
+    echo '</div>';
+}
 
 get_template_part('templates/footer');
 

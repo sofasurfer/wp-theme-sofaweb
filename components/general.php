@@ -126,7 +126,6 @@ class General {
         }
         $p_query = array_merge($p_query,$atts);
 
-        error_log(print_r($p_query,true));
         $rev_posts = get_posts( $p_query );
 
         ob_start();
