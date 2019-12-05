@@ -254,6 +254,15 @@
     body.sticky .navbar-form{
         padding-top: 0px!important;
     }
+    body.sticky #menu-header-menu .menu-item{
+            &.menu-icon-work:before,
+            &.menu-icon-blog:before,
+            &.menu-icon-about:before,
+            &.menu-icon-login:before  {
+                top: 13px;
+            }
+
+    }
 
     #menu-header-menu{
         
