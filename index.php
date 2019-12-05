@@ -1,19 +1,34 @@
 <?php
 get_template_part('templates/header');
 
-
-get_template_part('templates/jumbotron');
-
-
-
 // Set post
-if( have_posts() ) the_post();
 
-echo '<div id="container" class="container">';
+error_log( "POST:" . get_post_type() );
 
-the_content();
+if( get_post_type() == "post" ){
+    get_template_part('templates/jumbotron');
+    echo '<div id="container" class="container">';
 
-echo '</div>';
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            echo("<h1>KIB</>");
+            the_post(); 
+
+            //
+            // Post Content here
+            //
+        } // end while
+    } // end if
+
+    echo '</div>';    
+}else{
+    
+    if( have_posts() ) the_post();
+    get_template_part('templates/jumbotron');
+    echo '<div id="container" class="container">';
+    the_content();
+    echo '</div>';
+}
 
 get_template_part('templates/footer');
 

@@ -16,7 +16,6 @@
         font-family: 'Roboto', sans-serif;
 
     }
-
     h1{
         font-family: 'Roboto Slab', serif;
     }
@@ -199,6 +198,9 @@
 
     .navbar-default{
         border-color: #eee;
+    }
+    .navbar-default .navbar-nav li{
+        margin-right: 20px;
     }
     .navbar-default .navbar-nav li a{
         padding-left: 35px
