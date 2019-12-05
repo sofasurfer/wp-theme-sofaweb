@@ -1,3 +1,4 @@
+
 <footer id="footer">
     <div class="container">
         <div class="row">
@@ -38,7 +39,15 @@
     <p>I use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. <a href="system/privacy-policy.html">More info</a></p>
 </div-->
 
-<script type="text/javascript" src="/assets/components/minifyx/cache/scripts_a710a3c4ed.js"></script>
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+<script src="<?= get_stylesheet_directory_uri(); ?>/dist/assets/js/minimal.1.min.js?v=<?= do_shortcode('[wp_version]') ;?>"></script>
 
 <!-- Piwik -->
 <script type="text/javascript">
@@ -55,16 +64,7 @@
 </script>
 <noscript><p><img src="//piwik.sofasurfer.org/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-3456716-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 </body>
 </html>

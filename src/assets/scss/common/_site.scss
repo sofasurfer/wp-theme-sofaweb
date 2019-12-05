@@ -256,6 +256,15 @@
     body.sticky .navbar-form{
         padding-top: 0px!important;
     }
+    body.sticky #menu-header-menu .menu-item{
+            &.menu-icon-work:before,
+            &.menu-icon-blog:before,
+            &.menu-icon-about:before,
+            &.menu-icon-login:before  {
+                top: 13px;
+            }
+
+    }
 
     #menu-header-menu{
         
@@ -325,17 +334,52 @@
     .navTags li{
         margin:5px;
         padding:0px;
+        padding-right: 5px;
     }
     .navTags li a{
         color:#FFF;
     }
     .tagList li
     {
-    font-size: 12px;
+        display: inline;
+        padding: .2em .6em .3em;
+        font-weight: 700;
+        line-height: 1;
+        color:#337ab7;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: .25em;
+
+        font-size: 12px;
         display: inline-block;
         list-style-type: none;
         margin-bottom: 10px;
+        background-color: #eee;
 
+        padding-right: 15px!important;
+
+        margin-right: 10px;
+
+        &.current-cat{
+            color: white;
+            background-color: #337ab7;
+
+            a,
+            a:hover{
+                color: white;
+                background-color:transparent;
+            }
+        }
+
+        a{
+            padding-right: 2px;            
+        }
+
+    }
+
+    .tagList li a{
+        display: inline-block;
     }
     .tagList .label a, 
     .tagList .badge a{
@@ -664,7 +708,20 @@
             height: auto!important;
             overflow:hidden;
         }
+        .grid-item{
+            width: 100%;
+        }
+        #menu-header-menu{
 
+            .menu-item{
+                &.menu-icon-work:before,
+                &.menu-icon-blog:before,
+                &.menu-icon-about:before,
+                &.menu-icon-login:before  {
+                    top: 10px;
+                }        
+            }
+        }
     }
 
 

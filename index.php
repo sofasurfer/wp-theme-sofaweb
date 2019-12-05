@@ -1,31 +1,21 @@
 <?php
+
+
+error_log( get_post_type() );
+
 get_template_part('templates/header');
 
-// Set post
-
-error_log( "POST:" . get_post_type() );
-
-if( get_post_type() == "post" ){
-    get_template_part('templates/jumbotron');
-    echo '<div id="container" class="container">';
-
-    if ( have_posts() ) {
-        while ( have_posts() ) {
-            echo("<h1>KIB</>");
-            the_post(); 
-
-            //
-            // Post Content here
-            //
-        } // end while
-    } // end if
-
-    echo '</div>';    
+if ( (!is_front_page() && is_home()) || is_category() ) {
+    get_template_part('templates/archive_header');
+    while ( have_posts() ) {
+        the_post();
+        get_template_part('templates/archive');
+    }
+    echo '</div></div>';
 }else{
-    
-    if( have_posts() ) the_post();
     get_template_part('templates/jumbotron');
     echo '<div id="container" class="container">';
+    if( have_posts() ) the_post();
     the_content();
     echo '</div>';
 }
