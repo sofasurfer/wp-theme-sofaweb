@@ -40,6 +40,7 @@ class General {
         add_shortcode( 'wp_version', [$this, 'c_shortcode_version'] );
         add_shortcode( 'get_posts', [$this, 'c_get_posts'] );
         add_shortcode( 'render_imagetag', [$this, 'c_shortcode_render_image'] );
+        add_shortcode( 'pagination_bar', [$this, 'c_pagination_bar'] );
         // add_shortcode( 'cdt_post_languages', [$this, 'cdt_post_languages'] );
         // add_shortcode( 'cdt_post_locale', [$this, 'cdt_post_locale'] );
 
@@ -107,6 +108,24 @@ class General {
         return 1.0;
     }
 
+    public function c_pagination_bar() {
+        global $wp_query;
+     
+        $total_pages = $wp_query->max_num_pages;
+
+        $list = "";
+        if ($total_pages > 1){
+            $current_page = max(1, get_query_var('paged'));
+     
+            $list .= "<li>" . paginate_links(array(
+                'base' => get_pagenum_link(1) . '%_%',
+                'format' => '/page/%#%',
+                'current' => $current_page,
+                'total' => $total_pages,
+            )) . '</li>';
+        }
+        return $list;
+    }
 
     /*
         Returns posts

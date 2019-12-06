@@ -10,7 +10,7 @@ if ( (!is_front_page() && is_home()) || is_category() ) {
         the_post();
         get_template_part('templates/archive');
     }
-    echo '</div></div>';
+    get_template_part('templates/archive_footer');
 }else{
     get_template_part('templates/jumbotron');
     echo '<div id="container" class="container">';

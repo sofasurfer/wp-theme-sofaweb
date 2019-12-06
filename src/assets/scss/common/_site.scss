@@ -174,7 +174,9 @@
     .row-fluid .pagination-right{
         padding-right:30px;    
     }
-    .pagination a.active{
+    .pagination a.active,
+    .pagination a.current,
+    .pagination span.current{
         color: white;
         background-color: #337ab7;
     }
