@@ -42,6 +42,7 @@ class General {
         add_shortcode( 'render_imagetag', [$this, 'c_shortcode_render_image'] );
         add_shortcode( 'pagination_bar', [$this, 'c_pagination_bar'] );
         add_shortcode( 'get_search_results', [$this, 'c_get_search_results'] );
+        add_shortcode( 'get_search_title', [$this, 'c_get_search_title'] );
         // add_shortcode( 'cdt_post_languages', [$this, 'cdt_post_languages'] );
         // add_shortcode( 'cdt_post_locale', [$this, 'cdt_post_locale'] );
 
@@ -51,6 +52,10 @@ class General {
 
 
         // Disable gutenberg
+        add_filter( 'the_excerpt', 'shortcode_unautop');
+        add_filter( 'the_excerpt', 'do_shortcode');
+        add_filter( 'get_the_excerpt', 'do_shortcode', 5 );
+
 
         add_filter('use_block_editor_for_post', '__return_false', 10);
         add_filter('use_block_editor_for_post_type', '__return_true', 10);
@@ -109,6 +114,11 @@ class General {
         return 1.0;
     }
 
+
+    public function c_get_search_title(){
+        return "Search Results for: " . $_GET['query'];
+    }
+
     public function c_get_search_results(){
 
         $s=get_search_query();
@@ -124,7 +134,6 @@ class General {
         $results = "";
         $counter = 1;
         if ( $the_query->have_posts() ) {
-                $results .= "<h2>Search Results for: ".$s."</h2>";
                 $results .= "<table class=\"table table-condense table-hover\">";
                 foreach($the_query->posts as $post) {
                     $results .= '<tr><td><h3>'.$counter.'. <a href="' . get_the_permalink($post->ID) . '"">' . get_the_title($post->ID) . ' :' . '</a></h3>';
