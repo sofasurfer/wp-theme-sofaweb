@@ -39,4 +39,22 @@ window.addEventListener("load", function(){
     return false;
   });
 
+  /*
+    Pritty Code 
+  */
+  $( 'pre' ).each( function(key, value){
+    $(this).text( $(this).html() );
+  });
+
+  $('.prettyprint_old').html(function(i,h){
+    return h.replace(/[<>\"\'\t\n]/g, function(m) { return {
+      '<' : '&lt;',
+      '>' : '&gt;',
+      "'" : '&#39;',
+      '"' : '&quot;',
+      '\t': '  ',
+      '\n': '<br/>'
+    }[m]});
+  });
+
 });
