@@ -40,6 +40,9 @@ class General {
         add_shortcode( 'wp_version', [$this, 'c_shortcode_version'] );
         add_shortcode( 'get_posts', [$this, 'c_get_posts'] );
         add_shortcode( 'render_imagetag', [$this, 'c_shortcode_render_image'] );
+        add_shortcode( 'pagination_bar', [$this, 'c_pagination_bar'] );
+        add_shortcode( 'get_search_results', [$this, 'c_get_search_results'] );
+        add_shortcode( 'get_search_title', [$this, 'c_get_search_title'] );
         // add_shortcode( 'cdt_post_languages', [$this, 'cdt_post_languages'] );
         // add_shortcode( 'cdt_post_locale', [$this, 'cdt_post_locale'] );
 
@@ -49,6 +52,10 @@ class General {
 
 
         // Disable gutenberg
+        add_filter( 'the_excerpt', 'shortcode_unautop');
+        add_filter( 'the_excerpt', 'do_shortcode');
+        add_filter( 'get_the_excerpt', 'do_shortcode', 5 );
+
 
         add_filter('use_block_editor_for_post', '__return_false', 10);
         add_filter('use_block_editor_for_post_type', '__return_true', 10);
@@ -107,6 +114,62 @@ class General {
         return 1.0;
     }
 
+
+    public function c_get_search_title(){
+        $args = array( 
+            's' => $_GET['query']);
+
+        $wp_query = new \WP_Query( $args );
+
+        return  $wp_query->found_posts . " Results for: " . $_GET['query'];
+    }
+
+    public function c_get_search_results(){
+
+        $s=get_search_query();
+        
+        $s = $_GET['query'];
+
+        $args = array( 's' => $s );
+        
+        error_log('args:' . print_r($args,true));
+
+        // The Query
+        $wp_query = new \WP_Query( $args );
+        $results = "";
+        $counter = 1;
+        if ( $wp_query->have_posts() ) {
+                $results .= "<table class=\"table table-condense table-hover\">";
+                foreach($wp_query->posts as $post) {
+                    $results .= '<tr><td><h3>'.$counter.'. <a href="' . get_the_permalink($post->ID) . '"">' . get_the_title($post->ID) . ' :' . '</a></h3>';
+                    $results .= '<div class="extract"><p>'.get_the_excerpt($post->ID).'</p></div></td></tr>';
+                    $counter++;
+                }
+                $results .= "</table>";
+            }else{
+                $results .= '<div class="alert alert-info"><p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p></div>';
+        }
+        return $results;
+    }
+
+    public function c_pagination_bar() {
+        global $wp_query;
+     
+        $total_pages = $wp_query->max_num_pages;
+
+        $list = "";
+        if ($total_pages > 1){
+            $current_page = max(1, get_query_var('paged'));
+     
+            $list .= "<li>" . paginate_links(array(
+                'base' => get_pagenum_link(1) . '%_%',
+                'format' => '/page/%#%',
+                'current' => $current_page,
+                'total' => $total_pages,
+            )) . '</li>';
+        }
+        return $list;
+    }
 
     /*
         Returns posts

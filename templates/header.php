@@ -44,10 +44,8 @@
                     'container'         => false,
                     'menu_class'        => 'nav navbar-nav',
                 )
-            ); ?>             
-
-
-            <form class="navbar-form navbar-right" role="search" action="site-search/" method="get">
+            ); ?>
+            <form class="navbar-form navbar-right" role="search" action="search/" method="get">
                 <div class="input-group">
                   <input type="text" id="site-search" class="form-control" placeholder="Search for..." autocomplete="on" name="query" value="" >
                   <span class="input-group-btn">

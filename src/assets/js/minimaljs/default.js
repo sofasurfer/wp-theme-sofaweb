@@ -12,6 +12,15 @@ window.addEventListener("load", function(){
 
 
   /*
+    Hover Item
+  */
+  $('.item-hover').hover( function() {
+      $(this).find('.item-hover-caption').fadeIn(300);
+  }, function() {
+      $(this).find('.item-hover-caption').fadeOut(100);
+  })
+
+  /*
     Scroll Top
   */
   $('#back-top').hide();  
@@ -28,6 +37,24 @@ window.addEventListener("load", function(){
     event.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, "slow");
     return false;
+  });
+
+  /*
+    Pritty Code 
+  */
+  $( 'pre' ).each( function(key, value){
+    $(this).text( $(this).html() );
+  });
+
+  $('.prettyprint_old').html(function(i,h){
+    return h.replace(/[<>\"\'\t\n]/g, function(m) { return {
+      '<' : '&lt;',
+      '>' : '&gt;',
+      "'" : '&#39;',
+      '"' : '&quot;',
+      '\t': '  ',
+      '\n': '<br/>'
+    }[m]});
   });
 
 });
