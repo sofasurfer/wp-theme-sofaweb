@@ -1,10 +1,6 @@
 
 
-
-
-
-  console.log('INIT');
-
+window.addEventListener("load", function(){
 
   /*
     Masonry grid
@@ -14,7 +10,11 @@
     itemSelector: '.grid-item',
   });
 
-  
+
+  /*
+    Scroll Top
+  */
+  $('#back-top').hide();  
   $(window).scroll(function () {
     if ($(this).scrollTop() > 280) {
       $('#back-top').fadeIn();
@@ -29,3 +29,5 @@
     $("html, body").animate({ scrollTop: 0 }, "slow");
     return false;
   });
+
+});

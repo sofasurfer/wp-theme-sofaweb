@@ -1,5 +1,6 @@
 <?php
 
+
 error_log( get_post_type() );
 
 get_template_part('templates/header');

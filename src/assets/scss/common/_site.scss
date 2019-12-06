@@ -16,7 +16,6 @@
         font-family: 'Roboto', sans-serif;
 
     }
-
     h1{
         font-family: 'Roboto Slab', serif;
     }
@@ -201,6 +200,9 @@
 
     .navbar-default{
         border-color: #eee;
+    }
+    .navbar-default .navbar-nav li{
+        margin-right: 20px;
     }
     .navbar-default .navbar-nav li a{
         padding-left: 35px
@@ -708,7 +710,20 @@
             height: auto!important;
             overflow:hidden;
         }
+        .grid-item{
+            width: 100%;
+        }
+        #menu-header-menu{
 
+            .menu-item{
+                &.menu-icon-work:before,
+                &.menu-icon-blog:before,
+                &.menu-icon-about:before,
+                &.menu-icon-login:before  {
+                    top: 10px;
+                }        
+            }
+        }
     }
 
 

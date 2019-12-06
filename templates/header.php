@@ -9,10 +9,9 @@
     <title><?php wp_title( '|', true, 'right' ); ?><?= get_bloginfo(); ?></title>
     <meta name="description" content="Welcome to SofaSurfer the place for digital related problem solving and IT-development since 1999." /> 
     <meta name="author" content="sofasurfer" />
-    <link rel="canonical" href="<?= get_home_url(); ?>" />
-    
-   
-    <base href="<?= get_home_url(); ?>" id="site_url" />
+
+    <link rel="canonical" href="<?= get_site_url(); ?>" />
+    <base href="<?= get_site_url(); ?>" id="site_url" />
     
     <link rel="stylesheet" href="<?= get_stylesheet_directory_uri(); ?>/dist/assets/css/main.1.min.css?v=<?= do_shortcode('[wp_version]') ;?>" />
     <script type="text/javascript">
