@@ -46,6 +46,10 @@
         width: auto;
         float:left;
     }
+
+    .img-responsive{
+        width: 100%;
+    }
 /*    body.sticky .page-header.jumbotron{
         display: none;
     }
@@ -205,7 +209,8 @@
     .navbar-default .navbar-nav li a{
         padding-left: 35px
     }
-
+    .navbar-default .navbar-nav>.current_page_parent>a,
+    .navbar-default .navbar-nav>.current_page_parent>a:hover,
     .navbar-default .navbar-nav>.current_page_item>a,
     .navbar-default .navbar-nav>.current_page_item>a:hover{
         color: #555;
