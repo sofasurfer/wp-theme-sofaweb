@@ -12,6 +12,15 @@ window.addEventListener("load", function(){
 
 
   /*
+    Hover Item
+  */
+  $('.item-hover').hover( function() {
+      $(this).find('.item-hover-caption').fadeIn(300);
+  }, function() {
+      $(this).find('.item-hover-caption').fadeOut(100);
+  })
+
+  /*
     Scroll Top
   */
   $('#back-top').hide();  

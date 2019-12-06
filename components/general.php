@@ -116,7 +116,12 @@ class General {
 
 
     public function c_get_search_title(){
-        return "Search Results for: " . $_GET['query'];
+        $args = array( 
+            's' => $_GET['query']);
+
+        $wp_query = new \WP_Query( $args );
+
+        return  $wp_query->found_posts . " Results for: " . $_GET['query'];
     }
 
     public function c_get_search_results(){
@@ -142,8 +147,7 @@ class General {
                 }
                 $results .= "</table>";
             }else{
-                 $results .= '<h2>Nothing Found</h2>';
-                    $results .= '<div class="alert alert-info"><p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p></div>';
+                $results .= '<div class="alert alert-info"><p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p></div>';
         }
         return $results;
     }
