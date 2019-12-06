@@ -19,9 +19,9 @@
             <h2 class="lead"><?= get_the_excerpt();?></h2>
             <div class="">
                 <span style="font-size:58px;">
-                <a href="https://www.sofasurfer.org/about-me/relax.html?video=sky2-bg.mp4">*</a>
-                <a href="https://www.sofasurfer.org/about-me/relax.html?video=dolphin-bg.mp4">*</a>
-                <a href="https://www.sofasurfer.org/about-me/relax.html?video=forest-bg.mp4">*</a>
+                <a href="/relax.html?video=sky2-bg.mp4">*</a>
+                <a href="/relax.html?video=dolphin-bg.mp4">*</a>
+                <a href="/relax.html?video=forest-bg.mp4">*</a>
                 </span>
             </div>           
         <?php endif; ?>      
