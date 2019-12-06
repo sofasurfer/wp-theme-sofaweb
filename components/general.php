@@ -183,7 +183,7 @@ class General {
             'order'         => 'DESC'
         );
         if( !empty($atts['size'])){ 
-            $p_query['numberposts'] = -1;
+            $p_query['numberposts'] = $atts['size'];
         }
         if( !empty($atts['ids'])){
             $p_query['post__in'] = explode(',', $atts['ids']);
