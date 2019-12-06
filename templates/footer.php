@@ -5,9 +5,9 @@
             <div class="col-md-4">                  
               <div class="">
                 <span style="font-size:58px;">
-                <a href="/relax.html?video=sky2-bg.mp4">*</a>
-                <a href="/relax.html?video=dolphin-bg.mp4">*</a>
-                <a href="/relax.html?video=forest-bg.mp4">*</a>
+                <a href="/relax/?video=sky2-bg.mp4">*</a>
+                <a href="/relax/?video=dolphin-bg.mp4">*</a>
+                <a href="/relax/?video=forest-bg.mp4">*</a>
                 </span>
               </div>
             </div>
