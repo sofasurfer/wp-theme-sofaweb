@@ -6,7 +6,7 @@
             <h2 class="lead"><?= get_the_excerpt(); ?></h2> 
         <?php else: ?>
             <div class="blogmeta subnav">
-                <p>Posted on <?= get_the_date();?> by <a href="blog/author/sofasurfer">sofasurfer</a>
+                <p>Posted: <?= get_the_date();?>
                 <span class="tags">&nbsp;|             <?php
                   $htmltags = array();
                   foreach(get_the_category() as $cat){
