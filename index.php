@@ -3,8 +3,6 @@
 get_template_part('templates/header');
 
 if ( (!is_front_page() && is_home()) || is_category() ) {
-    if( have_posts() ) the_post();
-
     get_template_part('templates/archive_header');
     while ( have_posts() ) {
         the_post();
