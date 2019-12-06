@@ -56,6 +56,7 @@ class General {
         add_filter( 'the_excerpt', 'do_shortcode');
         add_filter( 'get_the_excerpt', 'do_shortcode', 5 );
 
+        remove_filter('the_content', 'wpautop');
 
         add_filter('use_block_editor_for_post', '__return_false', 10);
         add_filter('use_block_editor_for_post_type', '__return_true', 10);
