@@ -41,6 +41,7 @@ class General {
         add_shortcode( 'get_posts', [$this, 'c_get_posts'] );
         add_shortcode( 'render_imagetag', [$this, 'c_shortcode_render_image'] );
         add_shortcode( 'pagination_bar', [$this, 'c_pagination_bar'] );
+        add_shortcode( 'get_search_results', [$this, 'c_get_search_results'] );
         // add_shortcode( 'cdt_post_languages', [$this, 'cdt_post_languages'] );
         // add_shortcode( 'cdt_post_locale', [$this, 'cdt_post_locale'] );
 
@@ -106,6 +107,35 @@ class General {
             return $my_theme->get( 'Version' );
         }
         return 1.0;
+    }
+
+    public function c_get_search_results(){
+
+        $s=get_search_query();
+        
+        $s = $_GET['query'];
+
+        $args = array( 's' => $s );
+        
+        error_log('args:' . print_r($args,true));
+
+        // The Query
+        $the_query = new \WP_Query( $args );
+        $results = "";
+        $counter = 1;
+        if ( $the_query->have_posts() ) {
+                $results .= "<h2>Search Results for: ".$s."</h2>";
+                $results .= "<table class=\"table table-condense table-hover\">";
+                foreach($the_query->posts as $post) {
+                    $results .= '<tr><td>'.$counter.'. <a href="' . get_the_permalink($post->ID) . '"">' . get_the_title($post->ID) . ' :' . $post->ID . '</a>';
+                    $results .= '<div class="extract"><p>'.get_the_excerpt($post->ID).'</p></div></td></tr>';
+                }
+                $results .= "</table>";
+            }else{
+                 $results .= '<h2>Nothing Found</h2>';
+                    $results .= '<div class="alert alert-info"><p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p></div>';
+        }
+        return $results;
     }
 
     public function c_pagination_bar() {

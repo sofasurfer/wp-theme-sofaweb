@@ -201,7 +201,6 @@
 
     */
 
-
     .navbar-default{
         border-color: #eee;
     }
@@ -213,7 +212,9 @@
     }
 
     .navbar-default .navbar-nav>.current_page_item>a,
-    .navbar-default .navbar-nav>.current_page_item>a:hover{
+    .navbar-default .navbar-nav>.current_page_item>a:hover,
+    .navbar-default .navbar-nav>.current_page_parent>a,
+    .navbar-default .navbar-nav>.current_page_parent>a:hover{
         color: #555;
         background-color: #eee;
 
@@ -541,8 +542,8 @@
     }
     #back-top{        
         position:fixed;
-        right:10px;
-        bottom:10px;
+        right:50px;
+        bottom:50px;
         display: block;
         font-size: 24px;
     }
