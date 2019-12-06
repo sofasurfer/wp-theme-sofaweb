@@ -127,7 +127,7 @@ class General {
                 $results .= "<h2>Search Results for: ".$s."</h2>";
                 $results .= "<table class=\"table table-condense table-hover\">";
                 foreach($the_query->posts as $post) {
-                    $results .= '<tr><td><h3>'.$counter.'. <a href="' . get_the_permalink($post->ID) . '"">' . get_the_title($post->ID) . ' :' . $post->ID . '</a></h3>';
+                    $results .= '<tr><td><h3>'.$counter.'. <a href="' . get_the_permalink($post->ID) . '"">' . get_the_title($post->ID) . ' :' . '</a></h3>';
                     $results .= '<div class="extract"><p>'.get_the_excerpt($post->ID).'</p></div></td></tr>';
                 }
                 $results .= "</table>";
