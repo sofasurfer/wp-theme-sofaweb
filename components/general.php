@@ -130,14 +130,15 @@ class General {
         error_log('args:' . print_r($args,true));
 
         // The Query
-        $the_query = new \WP_Query( $args );
+        $wp_query = new \WP_Query( $args );
         $results = "";
         $counter = 1;
-        if ( $the_query->have_posts() ) {
+        if ( $wp_query->have_posts() ) {
                 $results .= "<table class=\"table table-condense table-hover\">";
-                foreach($the_query->posts as $post) {
+                foreach($wp_query->posts as $post) {
                     $results .= '<tr><td><h3>'.$counter.'. <a href="' . get_the_permalink($post->ID) . '"">' . get_the_title($post->ID) . ' :' . '</a></h3>';
                     $results .= '<div class="extract"><p>'.get_the_excerpt($post->ID).'</p></div></td></tr>';
+                    $counter++;
                 }
                 $results .= "</table>";
             }else{
