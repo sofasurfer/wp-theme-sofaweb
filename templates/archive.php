@@ -13,7 +13,7 @@
           <span class="tags">
             <?php
               $htmltags = array();
-              foreach(get_categories() as $cat){
+              foreach(get_the_category() as $cat){
                 array_push($htmltags, '<a href="/'.$cat->taxonomy.'/'.$cat->slug.'/">'.$cat->name.'</a> ');
               }
             ?>
