@@ -3,7 +3,7 @@
         <h1><?= get_the_title(); ?></h1>
 
         <?php if( get_post_type() != 'post' ): ?>
-            <h2 class="lead"><?= get_the_excerpt(); ?></h2> 
+            <div class="lead"><?= get_the_excerpt(); ?></div> 
         <?php else: ?>
             <div class="blogmeta subnav">
                 <p>Posted: <?= get_the_date();?>
@@ -16,7 +16,7 @@
                 Tags: <?php echo implode(',', $htmltags); ?></span>
                 </p>
             </div>
-            <h2 class="lead"><?= get_the_excerpt();?></h2>
+            <div class="lead"><?= get_the_excerpt();?></div>
             <div class="">
                 <span style="font-size:58px;">
                 <a href="/relax/?video=sky2-bg.mp4">*</a>

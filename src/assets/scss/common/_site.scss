@@ -27,6 +27,9 @@
         letter-spacing:2px;
         font-family: 'Roboto Slab', serif;
     }
+    p{
+        margin: 20px 0px;
+    }
     .title,
     .title a{
         color: #5A5A5A;        
@@ -48,6 +51,10 @@
     }
     .img-responsive{
         width: 100%;
+    }
+    pre,
+    pre.prettyprint{
+        padding: 20px!important;
     }
 /*    body.sticky .page-header.jumbotron{
         display: none;
@@ -161,6 +168,9 @@
     .jumbotron h3{
         display: inline-block;
     }
+    .jumbotron .lead{
+        color: #5a5a5a;
+    }
     .jumbotron{
         background-position: center;
         background-repeat: no-repeat;
@@ -179,6 +189,10 @@
     .row-fluid .pull-right,
     .row-fluid .pagination-right{
         padding-right:30px;    
+    }
+    .pagination > li > a,
+    .pagination > li > span{
+        margin-right: 15px;
     }
     .pagination a.active,
     .pagination a.current,
@@ -322,6 +336,10 @@
     }
     .post-content .thumbnail{
         margin:10px;
+
+        figure{
+            overflow: hidden;
+        }
     }
     .post-info,
     .postmeta{
@@ -730,16 +748,30 @@
         .navbar-header{
             padding-bottom: 5px;
         }
+        .navbar-collapse{
+            max-height: 100%!important;
+            height: 100vh!important;
+        }
 
 
         #menu-header-menu{
 
+            margin-top: 50px;
+
             .menu-item{
+                font-size: 3rem;
+                line-height: 5rem;
+                margin-bottom: 50px;
+                padding-left: 100px;
+                a{
+                    line-height: 3rem;
+                }
+
                 &.menu-icon-work:before,
                 &.menu-icon-blog:before,
                 &.menu-icon-about:before,
                 &.menu-icon-login:before  {
-                    top: 10px;
+                    top: -10px;
                 }        
             }
         }

@@ -2,6 +2,8 @@
 
 get_template_part('templates/header');
 
+error_log('E:' . is_category());
+
 if ( (!is_front_page() && is_home()) || is_category() ) {
     get_template_part('templates/archive_header');
     while ( have_posts() ) {
