@@ -108,7 +108,7 @@ class General {
     }
 
     public function c_shortcode_version(){
-        $my_theme = wp_get_theme( 'cite-du-temps' );
+        $my_theme = wp_get_theme( 'sofaweb' );
         if ( $my_theme->exists() ){
             return $my_theme->get( 'Version' );
         }
