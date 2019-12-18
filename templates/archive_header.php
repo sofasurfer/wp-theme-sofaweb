@@ -1,7 +1,15 @@
 <div class="jumbotron"  >
     <div class="container">
         <h1><?= wp_title(); ?></h1>
-        <h2 class="lead"><?= get_the_excerpt( get_queried_object_id() ); ?></h2>       
+        <div class="lead">
+            <?php
+                if(is_category()){
+                    echo category_description();
+                }else{
+                    echo get_the_excerpt( get_queried_object_id() );
+                }
+             ?>
+        </div>       
     </div>
 </div>
 <div id="container" class="container">

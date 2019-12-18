@@ -2,7 +2,7 @@
 <footer id="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">                  
+            <div class="col-md-4">
               <div class="">
                 <span style="font-size:58px;">
                 <a href="/relax/?video=sky2-bg.mp4">*</a>
@@ -14,7 +14,8 @@
             <div class="col-md-4">
                 <center>
                     <div>Built by <a href="about/" rel="tooltip" title="Me">Kilian Bohnenblust</a> © 2012</div>
-                </center>               
+                    <small id="debuginfo"><a href="<?= get_privacy_policy_url(); ?>">privacy policy</a></small>       
+                </center>
             </div>
             <div class="col-md-4">
                 <div class="connect pull-right">
@@ -25,7 +26,7 @@
             </div>
         </div>
         <div class="meta-nav row">
-            <div class="col-md-12">                 
+            <div class="col-md-12">
             </div>
         </div>
     </div>

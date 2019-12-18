@@ -1,8 +1,11 @@
 
 <div class="post col-md-4 grid-item" id="[[+alias]]">
   <div class="thumbnail">
-
-    <?= do_shortcode("[render_imagetag size=\"people\" class=\"img-responsive\" id=\"".get_post_thumbnail_id()."\"]"); ?>
+    <?php if(has_post_thumbnail()): ?>
+    <figure>
+      <a href="<?= get_permalink();?>" alt="[[+pagetitle]]" title="[[+pagetitle]]"><?= do_shortcode("[render_imagetag size=\"people\" class=\"img-responsive\" id=\"".get_post_thumbnail_id()."\"]"); ?></a>
+    </figure>
+    <?php endif; ?>
     <div class="content">
         <h2 class="title"><a href="<?= get_permalink();?>" alt="[[+pagetitle]]" title="[[+pagetitle]]"><?= get_the_title(); ?></a></h2>   
         <p class="post-info"><?= get_the_date();?></p>

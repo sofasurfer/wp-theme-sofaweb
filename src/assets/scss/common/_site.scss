@@ -10,7 +10,7 @@
     html,
     body{
         display: block!important;
-        font-size: 16px;
+        font-size: 18px;
         background-color: #FFF;   
 
         font-family: 'Roboto', sans-serif;
@@ -20,12 +20,19 @@
         font-family: 'Roboto Slab', serif;
     }
     h3{
-        margin-top:33px;
+        margin-top:50px;
+        font-size: 1.6rem;
     }
     h2,h3{
         color: #5A5A5A;
         letter-spacing:2px;
         font-family: 'Roboto Slab', serif;
+    }
+    .article p{
+        margin: 20px 0px;
+    }
+    hr{
+        margin-bottom: 50px;
     }
     .title,
     .title a{
@@ -48,6 +55,10 @@
     }
     .img-responsive{
         width: 100%;
+    }
+    pre,
+    pre.prettyprint{
+        padding: 20px!important;
     }
 /*    body.sticky .page-header.jumbotron{
         display: none;
@@ -77,11 +88,11 @@
         height:70px;    
     }
     .beta{
-        font-size: 0.7em;
+        font-size: 0.7rem;
         
     }
     .list-group{
-    font-size: 14px;
+    font-size: 0.7rem;
     }
     .list-group ul.list-group-child {
         padding-left: 0px;
@@ -142,26 +153,27 @@
     .breadcrumb a{
         text-shadow:0 1px 0 #FFFFFF;
     }
-    .breadcrumb i{
-        font-size:18px;
-    }
+
     li.share{
         margin:10px 0px 0px 20px;
     }
     .jumbotron{
         text-align: center;
         margin: 0 auto;
-        margin-bottom:50px;
+        padding-top:130px;
         padding-left: 20px;
         padding-right: 20px;
     }
+
     .jumbotron h1{
-        padding-top:80px;        
         color: #5A5A5A;
         letter-spacing:3px        
     }
     .jumbotron h3{
         display: inline-block;
+    }
+    .jumbotron .lead{
+        color: #5a5a5a;
     }
     .jumbotron{
         background-position: center;
@@ -172,6 +184,20 @@
         -o-background-size: cover;
         background-size: cover;
     }
+
+    .parallax {
+
+      /* Set a specific height */
+      // min-height: 500px; 
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+
     .row-fluid {
         margin: 0 auto;
     }
@@ -181,6 +207,10 @@
     .row-fluid .pull-right,
     .row-fluid .pagination-right{
         padding-right:30px;    
+    }
+    .pagination > li > a,
+    .pagination > li > span{
+        margin-right: 15px;
     }
     .pagination a.active,
     .pagination a.current,
@@ -195,9 +225,13 @@
         text-decoration-color: #337ab7;
     }*/
     #container{
-        font-size: 18px;
-    overflow: hidden;
+        overflow: hidden;
+        padding-top: 50px;
         padding-bottom: 50px;
+
+        .article{
+            background-color:aqua;
+        }
     }
 
     /*
@@ -244,12 +278,12 @@
         font-family: 'Allerta', sans-serif;
         padding-right: 10px;
         padding-top: 20px;
-        font-size: 1.7em;
+        font-size: 1.6rem;
     }
     .navbar-form{
         padding-top:15px!important;
     }    
-    @media (min-width: 770px) {
+    @media (min-width: 768px) {
         .navbar-brand{
             padding-right: 30px;
             padding-top: 30px;
@@ -324,10 +358,15 @@
     }
     .post-content .thumbnail{
         margin:10px;
+
+        figure{
+            overflow: hidden;
+        }
     }
     .post-info,
     .postmeta{
-        font-size: 14px;
+        font-size: 0.77rem;
+        margin: 0px 0px;
     }
     .postmeta{
         clear:left;
@@ -364,7 +403,7 @@
         vertical-align: baseline;
         border-radius: .25em;
 
-        font-size: 12px;
+        font-size: 0.77rem;
         display: inline-block;
         list-style-type: none;
         margin-bottom: 10px;
@@ -401,7 +440,7 @@
     .tagList .nav-header{
         display: block;
     }
-    @media (min-width: 768px){
+    @media (min-width: 767px){
         body.sticky .row.tags{
             position: fixed;
             top: 50px;
@@ -537,7 +576,7 @@
         visibility: visible;
     }
     .connect{
-        font-size: 24px;
+        font-size: 1.3rem;
     }
     .connect i{
         color: #777777;
@@ -551,15 +590,19 @@
         right:50px;
         bottom:50px;
         display: block;
-        font-size: 24px;
+        font-size: 1.3rem;
     }
     .navbar-text{
         margin:0 auto;
         text-align: left;
     }
-    .text-centered {
+    .text-center {
         text-align:center;
         margin: 0 auto;
+    }
+    h2.text-center{
+        font-size: 3rem;
+        margin: 50px 0px;
     }
 
     .video-container {
@@ -639,14 +682,15 @@
     padding: 0px;
         background-color: #f8f8f8;        
     }
+
     .socialfeed .grid-item .thumbnail .meta,
     .socialfeed .grid-item .thumbnail .content,
     .socialfeed .grid-item .thumbnail .info{
-        font-size: 12px;
+        font-size: 0.6rem;
         padding: 10px 20px;        
     }
     .socialfeed .grid-item .thumbnail .content{
-        font-size: 16px;
+        font-size: 0.88rem;
         padding: 0px 20px;
     }
     .socialfeed .grid-item .thumbnail .meta{
@@ -666,7 +710,7 @@
     border-top-right-radius: 4px;
     }
 
-    @media (min-width: 768px){
+    @media (min-width: 767px){
         .lead,
         .jumbotron p {
             font-size: 28px;
@@ -724,14 +768,41 @@
         .grid-item{
             width: 100%;
         }
+
+        .navbar-header{
+            padding-bottom: 5px;
+        }
+        .navbar-collapse{
+            max-height: 100%!important;
+            height: 100vh!important;
+        }
+
+        .jumbotron{
+            padding-top: 100px;
+        }
+
+        #back-top{        
+            right:25px;
+            bottom:25px;
+        }
         #menu-header-menu{
 
+            margin-top: 50px;
+
             .menu-item{
+                font-size: 3rem;
+                line-height: 5rem;
+                margin-bottom: 50px;
+                padding-left: 100px;
+                a{
+                    line-height: 3rem;
+                }
+
                 &.menu-icon-work:before,
                 &.menu-icon-blog:before,
                 &.menu-icon-about:before,
                 &.menu-icon-login:before  {
-                    top: 10px;
+                    top: -10px;
                 }        
             }
         }

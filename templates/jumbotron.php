@@ -1,9 +1,10 @@
-<div class="page-header jumbotron"  >
+
+<div class="page-header jumbotron bgimage"  >
     <div class="container">
         <h1><?= get_the_title(); ?></h1>
 
         <?php if( get_post_type() != 'post' ): ?>
-            <h2 class="lead"><?= get_the_excerpt(); ?></h2> 
+            <div class="lead"><?= get_the_excerpt(); ?></div> 
         <?php else: ?>
             <div class="blogmeta subnav">
                 <p>Posted: <?= get_the_date();?>
@@ -16,7 +17,7 @@
                 Tags: <?php echo implode(',', $htmltags); ?></span>
                 </p>
             </div>
-            <h2 class="lead"><?= get_the_excerpt();?></h2>
+            <div class="lead"><?= get_the_excerpt();?></div>
             <div class="">
                 <span style="font-size:58px;">
                 <a href="/relax/?video=sky2-bg.mp4">*</a>
@@ -27,3 +28,9 @@
         <?php endif; ?>      
     </div>
 </div>
+
+<?php if(has_post_thumbnail() && get_post_type() == 'page' ): ?>
+<div class="parallax">
+    <?= do_shortcode("[render_imagetag size=\"people\" class=\"img-responsive\" id=\"".get_post_thumbnail_id()."\"]"); ?>
+</div>
+<?php endif; ?>
