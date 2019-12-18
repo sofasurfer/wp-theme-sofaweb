@@ -1,8 +1,3 @@
-<?php if(has_post_thumbnail() && get_post_type() == 'page' && false ): ?>
-<div class="parallax">
-    <?= do_shortcode("[render_imagetag size=\"people\" class=\"img-responsive\" id=\"".get_post_thumbnail_id()."\"]"); ?>
-</div>
-<?php endif; ?>
 
 <div class="page-header jumbotron bgimage"  >
     <div class="container">
@@ -33,3 +28,9 @@
         <?php endif; ?>      
     </div>
 </div>
+
+<?php if(has_post_thumbnail() && get_post_type() == 'page' ): ?>
+<div class="parallax">
+    <?= do_shortcode("[render_imagetag size=\"people\" class=\"img-responsive\" id=\"".get_post_thumbnail_id()."\"]"); ?>
+</div>
+<?php endif; ?>

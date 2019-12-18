@@ -6,7 +6,7 @@
                 if(is_category()){
                     echo category_description();
                 }else{
-                    get_the_excerpt( get_queried_object_id() );
+                    echo get_the_excerpt( get_queried_object_id() );
                 }
              ?>
         </div>       
