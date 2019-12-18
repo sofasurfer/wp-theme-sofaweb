@@ -14,12 +14,11 @@
             <div class="col-md-4">
                 <center>
                     <div>Built by <a href="about/" rel="tooltip" title="Me">Kilian Bohnenblust</a> © 2012</div>
-                    <small id="debuginfo">Page loaded 1.9272 s (cache)</small>         
                 </center>               
             </div>
             <div class="col-md-4">
                 <div class="connect pull-right">
-                  <a rel="tooltip" href="about-me/" title="Contact me"><i class="fa fa-envelope"></i></a>
+                  <a rel="tooltip" href="about/" title="Contact me"><i class="fa fa-envelope"></i></a>
                   <a rel="tooltip" href="https://twitter.com/sofacoder" title="Follow me @SofaCoder"><i class="fa fa-twitter"></i></a>
                   <a rel="tooltip" href="https://www.linkedin.com/in/sofasurfer" title="View my profile on LinkedIn"><i class="fa fa-linkedin"></i></a>
                 </div>  

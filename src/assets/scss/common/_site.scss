@@ -20,7 +20,7 @@
         font-family: 'Roboto Slab', serif;
     }
     h3{
-        margin-top:50px;
+        margin-top:33px;
     }
     h2,h3{
         color: #5A5A5A;
@@ -117,7 +117,9 @@
     #footer .fa{
         font-size: 2.3rem;
     }
-
+    #footer .connect a{
+        margin: 0px 5px;
+    }
     .breadcrumb{
         margin-left:0;
         padding-left:0;
@@ -211,7 +213,7 @@
         margin-right: 20px;
     }
     .navbar-default .navbar-nav li a{
-        padding-left: 35px
+        padding-left: 50px
     }
     .navbar-default .navbar-nav>.current_page_parent>a,
     .navbar-default .navbar-nav>.current_page_parent>a:hover,
@@ -291,9 +293,9 @@
                 z-index: 99;
                 content: "\f0b1";  /* this is your text. You can also use UTF-8 character codes as I do here */
                 font-family: "FontAwesome";
-                left:13px;
+                left:25px;
                 position:absolute;
-                top: 28px;
+                top: 29px;
                 color: #777;
             }
             &.menu-icon-blog:before{
