@@ -14,7 +14,7 @@
             <div class="col-md-4">
                 <center>
                     <div>Built by <a href="about/" rel="tooltip" title="Me">Kilian Bohnenblust</a> © 2012</div>
-                    <small id="debuginfo">Page loaded 1.9272 s (cache)</small>         
+                    <small id="debuginfo"><a href="<?= get_privacy_policy_url(); ?>">privacy policy</a></small>       
                 </center>               
             </div>
             <div class="col-md-4">

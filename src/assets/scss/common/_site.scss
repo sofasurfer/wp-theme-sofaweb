@@ -30,6 +30,9 @@
     p{
         margin: 20px 0px;
     }
+    hr{
+        margin-bottom: 50px;
+    }
     .title,
     .title a{
         color: #5A5A5A;        
@@ -156,7 +159,6 @@
     .jumbotron{
         text-align: center;
         margin: 0 auto;
-        margin-bottom:50px;
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -180,6 +182,20 @@
         -o-background-size: cover;
         background-size: cover;
     }
+
+    .parallax {
+
+      /* Set a specific height */
+      // min-height: 500px; 
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+
     .row-fluid {
         margin: 0 auto;
     }
@@ -208,7 +224,8 @@
     }*/
     #container{
         font-size: 18px;
-    overflow: hidden;
+        overflow: hidden;
+        padding-top: 50px;
         padding-bottom: 50px;
     }
 
