@@ -281,7 +281,7 @@
     .navbar-form{
         padding-top:15px!important;
     }    
-    @media (min-width: 770px) {
+    @media (min-width: 768px) {
         .navbar-brand{
             padding-right: 30px;
             padding-top: 30px;
@@ -438,7 +438,7 @@
     .tagList .nav-header{
         display: block;
     }
-    @media (min-width: 768px){
+    @media (min-width: 767px){
         body.sticky .row.tags{
             position: fixed;
             top: 50px;
@@ -708,7 +708,7 @@
     border-top-right-radius: 4px;
     }
 
-    @media (min-width: 768px){
+    @media (min-width: 767px){
         .lead,
         .jumbotron p {
             font-size: 28px;
@@ -775,7 +775,14 @@
             height: 100vh!important;
         }
 
+        .jumbotron{
+            padding-top: 100px;
+        }
 
+        #back-top{        
+            right:25px;
+            bottom:25px;
+        }
         #menu-header-menu{
 
             margin-top: 50px;
