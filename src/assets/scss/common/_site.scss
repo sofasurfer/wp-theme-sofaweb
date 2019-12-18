@@ -102,7 +102,7 @@
         border-top: 1px solid #E5E5E5;
         background-color: #F5F5F5;
         color: #777777;
-        padding: 20px 0px 50px 0px;
+        padding: 50px 0px 100px 0px;
     }    
     #footer h4{
         font-style:italic;
@@ -129,7 +129,7 @@
         font-size: 2.3rem;
     }
     #footer .connect a{
-        margin: 0px 5px;
+        margin-left: 20px;
     }
     .breadcrumb{
         margin-left:0;
@@ -157,6 +157,13 @@
     li.share{
         margin:10px 0px 0px 20px;
     }
+    .blogmeta{
+        margin-bottom: 50px;
+
+        p{
+            font-size: 1.1rem!important;            
+        }
+    }
     .jumbotron{
         text-align: center;
         margin: 0 auto;
@@ -167,7 +174,8 @@
 
     .jumbotron h1{
         color: #5A5A5A;
-        letter-spacing:3px        
+        letter-spacing:3px;
+        margin: 0px 0px 50px;
     }
     .jumbotron h3{
         display: inline-block;
@@ -183,6 +191,7 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+
     }
 
     .parallax {
@@ -356,6 +365,10 @@
         width: 25px;
         display: inline-block;
     }
+    .about .col-md-6{
+        margin-bottom: 50px;
+    }
+
     .post-content .thumbnail{
         margin:10px;
 
@@ -403,7 +416,7 @@
         vertical-align: baseline;
         border-radius: .25em;
 
-        font-size: 0.77rem;
+        font-size: 0.75rem;
         display: inline-block;
         list-style-type: none;
         margin-bottom: 10px;
@@ -472,7 +485,7 @@
         display: none;
         top: 0px;        
         bottom: 0px;
-        width: 360px;
+        width: 100%;
         padding: 10px;
         color: rgb(90, 90, 90);
         font-size: 1.5rem;
@@ -710,6 +723,29 @@
     border-top-right-radius: 4px;
     }
 
+    @media (min-width: 990px){
+        .jumbotron{
+            .container{
+                padding: 50px 0px;
+            }
+        }
+        .resume{
+            h3{
+                margin-top: 0px;
+            }
+        }
+        .about.row{
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+
+        .item-hover{
+            padding: 50px;
+        }
+
+
+    }
+    
     @media (min-width: 767px){
         .lead,
         .jumbotron p {
@@ -776,9 +812,16 @@
             max-height: 100%!important;
             height: 100vh!important;
         }
+        .navbar-toggle{
+            border: none;
+        }
 
         .jumbotron{
             padding-top: 100px;
+
+            h1{
+                margin: 0px 0px 25px;
+            }
         }
 
         #back-top{        
