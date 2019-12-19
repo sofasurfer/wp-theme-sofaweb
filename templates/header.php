@@ -48,10 +48,10 @@
             ); ?>
             <form class="navbar-form navbar-right" role="search" action="search/" method="get">
                 <div class="input-group">
-                  <input type="text" id="site-search" class="form-control" placeholder="Search for..." autocomplete="on" name="query" value="" >
-                  <span class="input-group-btn">
+                  <input type="text" autocomplete="off" id="site-search" class="form-control" placeholder="seek..." autocomplete="on" name="query" value="" >
+<!--                   <span class="input-group-btn">
                     <button class="btn btn-default" type="submit">Go!</button>
-                  </span>
+                  </span> -->
                 </div>
                 <input type="hidden" name="id" value="336" />
             </form>
