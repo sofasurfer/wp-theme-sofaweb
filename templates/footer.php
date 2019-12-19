@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-              <div class="">
+              <div class="relax">
                 <span style="font-size:58px;">
                 <a href="/relax/?video=sky2-bg.mp4">*</a>
                 <a href="/relax/?video=dolphin-bg.mp4">*</a>
