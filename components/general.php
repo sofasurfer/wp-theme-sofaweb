@@ -43,6 +43,8 @@ class General {
         add_shortcode( 'pagination_bar', [$this, 'c_pagination_bar'] );
         add_shortcode( 'get_search_results', [$this, 'c_get_search_results'] );
         add_shortcode( 'get_search_title', [$this, 'c_get_search_title'] );
+
+        add_shortcode( 'get_stream', [$this, 'c_get_stream'] );
         // add_shortcode( 'cdt_post_languages', [$this, 'cdt_post_languages'] );
         // add_shortcode( 'cdt_post_locale', [$this, 'cdt_post_locale'] );
 
@@ -128,12 +130,8 @@ class General {
     public function c_get_search_results(){
 
         $s=get_search_query();
-        
         $s = $_GET['query'];
-
         $args = array( 's' => $s );
-        
-        error_log('args:' . print_r($args,true));
 
         // The Query
         $wp_query = new \WP_Query( $args );
@@ -151,6 +149,44 @@ class General {
                 $results .= '<div class="alert alert-info"><p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p></div>';
         }
         return $results;
+    }
+
+    public function c_get_stream($atts){
+
+        $token = 'ksjdkasfjklsjowmieruweu94238fjeskajiieruejrk';
+        $uri = 'https://nas.sofasurfer.org/stream/?kib=header&action=get_stream&source=' . $atts['source'];
+
+        $output = "";
+        $request = new \WP_Http;
+        $args['method'] = 'POST';
+        $args['headers'] = array(
+            'API-Key' => $token,
+            'Content-Type' => 'application/json',
+        );
+        $args['body'] = array(
+            'token' => $token,
+        ); 
+        $results = $request->request( $uri, $args );
+        if( $results ){
+
+            $json = json_decode($results['body']);
+
+            if( $json->status == '200' ){
+                ob_start();
+                foreach( $json->data as $result ){
+                    include(  get_template_directory() . '/templates/gallery-item.php' );
+                }
+                include(  get_template_directory() . '/templates/gallery-slider.php' );
+                $output = ob_get_clean();
+            }else{
+                $output .= "ERROR: ". $json->error;
+            }
+        }else{
+            $output .= "Invalid REST API URL: " . $uri;
+        }
+
+        return $output;
+
     }
 
     public function c_pagination_bar() {
