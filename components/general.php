@@ -154,7 +154,7 @@ class General {
     public function c_get_stream($atts){
 
         $token = 'ksjdkasfjklsjowmieruweu94238fjeskajiieruejrk';
-        $uri = 'https://nas.sofasurfer.org/stream/?kib=header&action=get_stream&source=' . $atts['source'];
+        $uri = 'https://stream.sofasurfer.org/?kib=header&action=get_stream&source=' . $atts['source'];
 
         $output = "";
         $request = new \WP_Http;
