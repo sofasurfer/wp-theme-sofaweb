@@ -17,10 +17,11 @@
             <?php
               $htmltags = array();
               foreach(get_the_category() as $cat){
-                array_push($htmltags, '<a href="/'.$cat->taxonomy.'/'.$cat->slug.'/">'.$cat->name.'</a> ');
+                array_push($htmltags, '<a href="/'.$cat->taxonomy.'/'.$cat->slug.'/">'.$cat->name.'</a>');
               }
             ?>
-            Tags: <?php echo implode(',', $htmltags); ?>
+            Tags: <?php echo implode(', ', $htmltags); ?></span><br>
+            Comments: <?= get_comments_number(); ?>
         </span>         
           <span class="links">
             <a href="<?= get_permalink();?>" class="readmore btn btn-default">Read more</a>

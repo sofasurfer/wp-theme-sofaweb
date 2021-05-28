@@ -886,6 +886,11 @@
     input[type=text],input[type=email]{
         width: calc( 100% - 105px );        
     }
+
+    #submit{
+        @extend .btn;
+        @extend .btn-default;
+    }
 }
 
 #comments,
