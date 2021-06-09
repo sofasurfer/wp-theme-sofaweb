@@ -66,7 +66,7 @@ class General {
         add_filter('use_block_editor_for_page', '__return_false', 10);
 
 
-
+        add_action( 'login_enqueue_scripts', [$this, 'my_login_logo'] );
 
 
         if( function_exists('acf_add_options_page') ) {
@@ -286,6 +286,30 @@ class General {
         }
         return $lswitch;
     }
+
+    public function my_login_logo() { ?>
+        <style type="text/css">
+            #login h1 a, .login h1 a {
+                background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/logo.png);
+                height:200px;
+                width:200px;
+                background-size: 200px 200px;
+                background-repeat: no-repeat;
+                padding-bottom: 30px;
+            }
+
+            body.login{
+                background-color: khaki;
+            }
+
+            #loginform,
+            .login form{
+                border: none;
+                box-shadow: none;
+                background-color: khaki;
+            }
+        </style>
+    <?php }
 }
 
 // Trigger initialization
