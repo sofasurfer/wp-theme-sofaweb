@@ -66,7 +66,7 @@ class General {
         add_filter('use_block_editor_for_page', '__return_false', 10);
 
 
-
+        add_action( 'login_enqueue_scripts', [$this, 'my_login_logo'] );
 
 
         if( function_exists('acf_add_options_page') ) {
@@ -286,6 +286,55 @@ class General {
         }
         return $lswitch;
     }
+
+    public function my_login_logo() { ?>
+        <style type="text/css">
+            #login h1 a, .login h1 a {
+                background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/logo.png);
+                height:200px;
+                width:200px;
+                background-size: 200px 250px;
+                background-repeat: no-repeat;
+                padding-bottom: 30px;
+            }
+
+            body.login{
+                background-color: khaki;
+            }
+
+            #loginform,
+            .login form{
+                border: none;
+                box-shadow: none;
+                background-color: khaki;
+            }
+
+            #nav,
+            #backtoblog{
+                display:  none;
+            }
+            .login .privacy-policy-page-link{
+                margin: 0em 0 2em!important;
+            }
+            .login .privacy-policy-page-link a{
+                color: #660000;
+            }
+
+            .login.wp-core-ui .button-primary,
+            .login.wp-core-ui .button-primary:hover{
+                color: #fff;
+                background: #660000;
+                border-color: #660000;
+            }
+            .login.wp-core-ui .dashicons-visibility::before{
+                color:  #660000;
+            }
+            .login form .input{
+                border-radius: 0;
+                border-color: #660000;
+            }
+        </style>
+    <?php }
 }
 
 // Trigger initialization
