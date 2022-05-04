@@ -2,13 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
 
+
+    <?php
+    $og_info = apply_filters('c_get_ogobj','');
+    ?>
     <title><?php wp_title( '|', true, 'right' ); ?><?= get_bloginfo(); ?></title>
-    <meta name="description" content="Welcome to SofaSurfer the place for digital related problem solving and IT-development since 1999." /> 
-    <meta name="author" content="sofasurfer" />
+    <meta name="author" content="sofasurfer">
+    <meta name="description" content="<?= $og_info['description']; ?>">
+
+
+
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="<?= $og_info['title']; ?>"/>
+    <meta property="og:description" content="<?= $og_info['description']; ?>"/>
+    <?php if(!empty($og_info['image']) ): ?>
+    <meta property="og:image" content="<?= $og_info['image'][0]; ?>"/>
+    <meta property="og:image:width" content="<?= $og_info['image'][1]; ?>" />
+    <meta property="og:image:height" content="<?= $og_info['image'][2]; ?>" />
+    <?php endif; ?>
+
+    <!-- Preventing IE11 to request by default the /browserconfig.xml more than one time -->
+    <meta name="msapplication-config" content="none">
+    <!-- Disable touch highlighting in IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- Ensure edge compatibility in IE (HTTP header can be set in web server config) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <!-- Force viewport width and pixel density. Plus, disable shrinking. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Disable Skype browser-plugin -->
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
 
     <link rel="canonical" href="<?= get_site_url(); ?>" />
     <base href="<?= get_site_url(); ?>" id="site_url" />

@@ -57,6 +57,8 @@ class General {
         add_filter( 'the_excerpt', 'shortcode_unautop');
         add_filter( 'the_excerpt', 'do_shortcode');
         add_filter( 'get_the_excerpt', 'do_shortcode', 5 );
+        add_filter('c_get_ogobj', [$this, 'c_get_ogobj']);
+
 
         remove_filter('the_content', 'wpautop');
 
@@ -286,6 +288,33 @@ class General {
         }
         return $lswitch;
     }
+
+
+
+    public function c_get_ogobj(){
+
+        $obj = [];
+        $obj['locale'] = 'de_DE';
+        $obj['title'] = get_the_title() . ' | ' . get_bloginfo();
+        
+        if(is_category()){
+            $obj['description'] = strip_tags(category_description());
+        }else{
+            $obj['description'] = strip_tags(get_the_excerpt(get_queried_object_id()));
+        }
+
+
+        $image_id = false;
+        if( get_post_thumbnail_id() ){
+            $image_id = get_post_thumbnail_id();
+        }
+        if( $image_id  ){
+
+            $obj['image'] = wp_get_attachment_image_src( $image_id, 'large' );
+        }
+        return $obj;
+    }
+
 
     public function my_login_logo() { ?>
         <style type="text/css">
