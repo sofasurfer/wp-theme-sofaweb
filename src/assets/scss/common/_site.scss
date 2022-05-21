@@ -468,7 +468,7 @@
             background-color: white;
             padding-top:20px;
             padding-bottom: 0px;
-            width: 1160px;
+            width: 100vw;
         }
     }
     .row.tags hr{
@@ -948,4 +948,8 @@
             margin-bottom: 2rem;
         }
     }
+}
+
+.row.tags{
+    text-align: center;
 }
