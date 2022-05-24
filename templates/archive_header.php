@@ -12,7 +12,7 @@
         </div>       
     </div>
 </div>
-<div id="container" class="container-fluid">
+<div id="container" class="container">
 <div class="row tags">
     <div class="col-md-12">
         <ul class="nav tagList">
