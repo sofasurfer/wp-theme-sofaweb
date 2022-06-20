@@ -3,7 +3,7 @@
   <div class="thumbnail">
     <?php if(has_post_thumbnail()): ?>
     <figure>
-      <a href="<?= get_permalink();?>" alt="[[+pagetitle]]" title="[[+pagetitle]]"><?= do_shortcode("[render_imagetag size=\"people\" class=\"img-responsive\" id=\"".get_post_thumbnail_id()."\"]"); ?></a>
+      <a href="<?= get_permalink();?>" alt="[[+pagetitle]]" title="[[+pagetitle]]"><?= do_shortcode("[render_imagetag size=\"thumbnail\" class=\"img-responsive\" id=\"".get_post_thumbnail_id()."\"]"); ?></a>
     </figure>
     <?php endif; ?>
     <div class="content">

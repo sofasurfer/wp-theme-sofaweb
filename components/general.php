@@ -250,7 +250,7 @@ class General {
         }
         $srcset = wp_get_attachment_image_srcset( $args['id'], array( 400, 200 ) );
         $sizes = wp_get_attachment_image_sizes( $args['id'], array( 400, 200 ) );
-        return '<img class="lazy '.$args['class'].'" data-srcset="'.$srcset.'" data-src="'.$src[0].'" alt="" />';
+        return '<img class="lazy '.$args['class'].'" srcset="'.$srcset.'" data-src="'.$src[0].'" alt="" />';
     }
 
     public function cdt_post_locale(){
